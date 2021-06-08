@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions, DateSelectArg, EventApi, EventClickArg } from '@fullcalendar/common';
 import { createEventId, INITIAL_EVENTS } from '../event-utils';
+import Tooltip from 'tooltip-js'; 
+import tippy from 'tippy.js';
 
 
 @Component({
@@ -20,13 +22,18 @@ export class HomeComponent implements OnInit {
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
     },
-    eventMouseEnter: function(info) {
-      info.el, {
-        title: 'hi',
-        placement: 'top',
-        trigger: 'hover',
-        container: 'body'
-      };
+    // eventMouseEnter: function(info) {
+    //   const tooltip= new Tooltip(info.el, {
+    //     title: 'hi',
+    //     placement: 'top',
+    //     trigger: 'hover',
+    //     container: 'body'
+    //   };
+    // },
+    eventMouseEnter:function (info) {
+      tippy(info.el, {
+        content:"ksljd"
+      });
     },
     initialView: 'dayGridMonth',
     initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting to fetch from a feed
@@ -49,7 +56,6 @@ export class HomeComponent implements OnInit {
     const { calendarOptions } = this;
     calendarOptions.weekends = !calendarOptions.weekends;
   }
-
   handleDateSelect(selectInfo: DateSelectArg) {
     const title = prompt('Please enter a new title for your event');
     const calendarApi = selectInfo.view.calendar;

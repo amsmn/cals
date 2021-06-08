@@ -25,7 +25,9 @@
     "@fullcalendar/list": "^5.7.2",
     "@fullcalendar/timegrid": "^5.7.2",
     "fullcalendar": "^5.7.0",
+    "ngx-tooltip": "0.0.9",
     "rxjs": "~6.6.0",
+    "tippy.js": "^6.2.5",
     "tooltip-js": "^3.0.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
