@@ -4,6 +4,10 @@ import { createEventId, INITIAL_EVENTS } from '../event-utils';
 import Tooltip from 'tooltip-js'; 
 import tippy from 'tippy.js';
 
+import 'tippy.js/dist/tippy.css'
+import 'tippy.js/themes/light.css';
+import 'tippy.js/animations/scale.css';
+
 
 @Component({
   selector: 'app-home',
@@ -32,7 +36,14 @@ export class HomeComponent implements OnInit {
     // },
     eventMouseEnter:function (info) {
       tippy(info.el, {
-        content:"ksljd"
+        content:'hiiiiii',
+        // placement: "top-start",
+        // arrow: true,
+        //                // The prompt does not disappear when the mouse is placed in the prompt
+        // interactive: true
+        // ,
+        //  animation:'scale',//display animation
+        //  theme:'light'
       });
     },
     initialView: 'dayGridMonth',
